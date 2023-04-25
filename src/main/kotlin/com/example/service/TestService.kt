@@ -1,5 +1,7 @@
 package com.example.service
 
+import io.micronaut.cache.annotation.CacheConfig
+import io.micronaut.cache.annotation.Cacheable
 import io.reactivex.Flowable
 import io.reactivex.Single
 import jakarta.inject.Singleton
@@ -7,7 +9,8 @@ import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 
 @Singleton
-class TestService {
+@CacheConfig("letterCache")
+open class TestService {
 
     private val logger: Logger = LoggerFactory.getLogger(TestService::class.java)
 
@@ -25,7 +28,8 @@ class TestService {
             }
     }
 
-    private fun processLetters(letters: List<String>) : Single<Map<String, String>> {
+    @Cacheable(parameters = ["letters"])
+    open fun processLetters( letters: List<String>) : Single<Map<String, String>> {
         logger.info("Inside processLetters")
 
         val letterMap = letters.associateWith { it.uppercase() }

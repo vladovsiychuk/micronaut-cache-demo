@@ -4,7 +4,6 @@ import com.example.service.TestService
 import io.micronaut.http.annotation.Controller
 import io.micronaut.http.annotation.Get
 import io.reactivex.Flowable
-import io.reactivex.Single
 
 @Controller("/test")
 class TestController (private val service: TestService) {

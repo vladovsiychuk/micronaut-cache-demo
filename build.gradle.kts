@@ -28,6 +28,7 @@ dependencies {
     runtimeOnly("ch.qos.logback:logback-classic")
     runtimeOnly("io.micronaut.rxjava2:micronaut-rxjava2-http-server-netty")
     implementation("io.micronaut:micronaut-validation")
+    implementation("io.micronaut.cache:micronaut-cache-caffeine")
 
     runtimeOnly("com.fasterxml.jackson.module:jackson-module-kotlin")
 

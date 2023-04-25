@@ -1,6 +1,10 @@
 micronaut:
   application:
     name: micronautCacheDemo
+  caches:
+    letterCache:
+      maximum-size: 1000
+
 netty:
   default:
     allocator:
